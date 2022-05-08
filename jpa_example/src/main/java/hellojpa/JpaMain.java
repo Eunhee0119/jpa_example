@@ -40,14 +40,14 @@ public class JpaMain {
             Member findMember = em.find(Member.class,2L);
             findMember.setName("updateName");
             */
-
+/*
             List<Member> result =  em.createQuery("select m from Member as m",Member.class)
                     .setFirstResult(1)
                     .setMaxResults(10)  // 페이지네이션
                     .getResultList();
             for(Member member : result){
                 System.out.println(member.getName());
-            }
+            }*/
 
             tx.commit();
         }catch (Exception e){
