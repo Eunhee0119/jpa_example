@@ -9,9 +9,16 @@ public class Member {
     @GeneratedValue
     @Column(name = "MEMBER_ID")
     private Long id;
+
+    @Column (name = "USERNAME")
     private String name;
-    private String street;
-    private String zopcode;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+/*    @Column(name = "TEAM_ID")
+    private Long teamId;*/
 
     public Member() {
     }
@@ -32,19 +39,19 @@ public class Member {
         this.name = name;
     }
 
-    public String getStreet() {
-        return street;
+    public Team getTeam() {
+        return team;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
-    public String getZopcode() {
-        return zopcode;
+    /*    public Long getTeamId() {
+        return teamId;
     }
 
-    public void setZopcode(String zopcode) {
-        this.zopcode = zopcode;
-    }
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
+    }*/
 }
