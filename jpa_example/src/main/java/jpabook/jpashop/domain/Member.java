@@ -21,8 +21,8 @@ public class Member {
 
     private String zipcode;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+/*    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();*/
 
     public Member() {
     }
@@ -66,4 +66,5 @@ public class Member {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
 }
