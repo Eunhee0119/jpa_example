@@ -21,12 +21,8 @@ public class Member {
 
     private String zipcode;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
-
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+/*    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();*/
 
     public Member() {
     }
@@ -71,19 +67,4 @@ public class Member {
         this.zipcode = zipcode;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
-    public Locker getLocker() {
-        return locker;
-    }
-
-    public void setLocker(Locker locker) {
-        this.locker = locker;
-    }
 }
