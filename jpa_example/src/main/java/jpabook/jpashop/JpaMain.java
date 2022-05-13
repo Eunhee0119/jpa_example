@@ -1,15 +1,11 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
-import jpabook.jpashop.domain.Team;
+import jpabook.jpashop.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class JpaMain {
 
@@ -24,7 +20,11 @@ public class JpaMain {
 
         try {
 
+            Book book = new Book();
+            book.setName("jpa");
+            book.setAuthor("hehe");
 
+            em.persist(book);
             tx.commit();
         }catch (Exception e){
             tx.rollback();
